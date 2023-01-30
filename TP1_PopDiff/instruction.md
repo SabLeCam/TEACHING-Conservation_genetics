@@ -4,7 +4,7 @@
 
 Dans ce TP, nous allons explorer un jeu de données de 169 tigres génotypés à 11 locus microsatellites.
 Dans un premier temps, nous allons déterminer la diversité génétique à l’intérieur de chaque population et la divergence génétique entre les 9 populations.
-Puis nous allons estimer le nombre de populations le plus vraisemblable parmi l’ensemble des génotypes.
+Puis nous allons estimer le nombre de populations le plus vraisemblable parmi l’ensemble des génotypes en inférant le niveau d'admixture.
 
 Ce jeu de données est issu de l'article suivant
 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0111207#s5
@@ -30,13 +30,34 @@ Nous allons effectuer ces analyses sous R.
 Installez les packages suivants:
 ```r
 install.packages("adegenet","hierfstat","pegas")
-install.packages("ggplot2")
+install.packages("ggplot2","magrittr","reshape2")
+
+install.packages(c("fields","RColorBrewer","mapplots"))
+source("http://bioconductor.org/biocLite.R")
+
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.16")
+`%>%` <- magrittr::`%>%`
+
+source("http://membres-timc.imag.fr/Olivier.Francois/POPSutilities.R")
+
+source("http://membres-timc.imag.fr/Olivier.Francois/Conversion.R")
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("LEA")
+
 ```
 ```r
 library("adegenet")
 library("pegas")
 library("hierfstat")
 library("ggplot2")
+library("dplyr")
+library("LEA")
+library(reshape2)
 ```
 
 ## Données
@@ -139,6 +160,12 @@ barplot(table(pop(dataset)), col=funky(17), las=3,
  ```r
  hw.test(dataset)
  ```
+ et teste si He et Ho sont signicativement différents (ecart à HW)
+ 
+ ```
+ bartlett.test(list(div$Hexp, div$Hobs))
+ t.test(div$Hexp, div$Hobs, pair = T, var.equal = TRUE, alter = "greater")
+ ```
  
  
  ## statistiques de diversité génétique par population
@@ -175,6 +202,72 @@ ggplot(Fis, aes(x=rownames(Fis),y=Fis$Fis_Bar)) +        # ggplot2 plot with con
   
  
  ## Analyses de différencation entre population
+ 
+ On compare maintenant les patrons de diversité génétiques entre les populations par rapport à la diversité globales.
+ 
+Matrice de Fst par paire de population (estimateur du Fst de Weir de Cockerham(1984)
+```r
+mat.obs <- pairwise.WCfst(dataset.hfstat)
+```
+représenter cette matice avec une heatmap
+
+```r
+melted_matobs <- melt(mat.obs, na.rm = TRUE)
+colnames(melted_matobs)<-c("pop1","pop2","value")
+
+ggheatmap <- ggplot2::ggplot(melted_matobs, aes(pop1, pop2, fill = value)) +
+  geom_tile(color = "white")+
+  scale_fill_gradient2(low = "blue", high = "red",  
+                       midpoint = 0.15, limit = c(0,0.3), space = "Lab" ) +
+  theme_minimal()+ # minimal theme
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                   size = 12, hjust = 1))
+ggheatmap
+
+
+![image](https://user-images.githubusercontent.com/20643860/215585630-23152f8e-0602-4bd4-af86-d89fc9752bf1.png)
+
+
+## Inférence bayésienne de la structure de population
+
+```r
+#input les données, fichier avec hearder différent
+
+input.file2 = "/Users/slecam/Desktop/COURS/BIODIV&CONS/4-TP structure tigres/169_tigers_structure.stru.txt"
+
+struct2geno(file = input.file2, TESS = FALSE, diploid = TRUE, FORMAT = 2,
+            extra.row = 1, extra.col = 2, output = "tiger.geno")
+```
+            
+On choisit le nombre de K à tester (nb de populations à inférer) et le nombre de répetition
+```r
+obj.snmf = snmf("tiger.geno", K=1:8, ploidy=2, entropy=T, repetition=10, alpha=100, project="new")
+plot(obj.snmf, cex = 1.2, col = "lightblue", pch = 19)
+```
+
+Comment choisir le modèle avec la meilleur probabilité postérieur?
+
+"We use SNMF’s cross-entropy criterion to infer the best estimate of K. The lower the cross-entropy, the better our model accounts for population structure. Sometimes cross-entropy continues to decline, so we might choose K where cross entropy first decreases the most."
+
+Souvent la solution n'est pas de choisir une K mais bien comparer les informations amenées par plusierus K
+Ici la première diminution de K a lieu à K=3 mais ça diminue également à K= 5
+Comparons les 2.
+
+Comment représenter les données?
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
  
  
  
