@@ -116,6 +116,18 @@ dataset@pop
 ```
 
 Il manque l'info pop
+
+```
+pop1 Melghat
+pop2 Satpura
+pop3 Pench
+pop4 Kanha-Pench corridor
+pop5 Kanha
+pop6 Achanakmar 
+pop7 Tadoba
+pop8 Bandhavgarh
+```
+
  ```r
 pop<-c(rep("M",14),rep("S",11),rep("P",51),rep("KPC",5),rep("K",50),rep("A",5),rep("T",11),rep("B",22))
 pop(dataset)<-pop
