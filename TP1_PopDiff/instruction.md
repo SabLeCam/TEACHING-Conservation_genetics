@@ -266,6 +266,10 @@ for (i in 1:length(pops)){
   axis(1, at=median(which(dataset@pop==pops[i])), labels=pops[i])}
   ```
   
+  
+  ![image](https://user-images.githubusercontent.com/20643860/215650112-ae3fb189-1511-4196-bd7e-2a6eda3db8ee.png)
+
+  
 
 
 
