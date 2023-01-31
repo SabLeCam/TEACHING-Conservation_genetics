@@ -255,6 +255,18 @@ Comparons les 2.
 
 Comment représenter les données?
 
+```r
+par(mar=c(4,4,0.5,0.5))
+pops<-levels(dataset@pop)
+barplot(t(qmatrix), col=RColorBrewer::brewer.pal(9,"Paired"), 
+        border=NA, space=0, xlab="Individuals", 
+        ylab="Admixture coefficients")
+#Add population labels to the axis:
+for (i in 1:length(pops)){
+  axis(1, at=median(which(dataset@pop==pops[i])), labels=pops[i])}
+  ```
+  
+
 
 
 
