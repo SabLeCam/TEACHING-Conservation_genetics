@@ -21,7 +21,7 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0111207#s5
   - Fis et   Fst global
   - Fst par paires de populations
   
-3. 
+3. Inférence bayésienne de la structure des populations
   
  
  ## Ressources et packages nécessaires
@@ -178,7 +178,7 @@ names(basicstat)
 explorez les valeurs de cette fonction pour obtenir les données de diversité par population
 
 
-un exemple
+Estime et test le coefficient de consanguinité Fis
 
 ```populations<-seppop(dataset)
 inbred_coef <- sapply (populations, inbreeding, res.type = "estimate") 
@@ -201,9 +201,9 @@ ggplot(Fis, aes(x=rownames(Fis),y=Fis$Fis_Bar)) +        # ggplot2 plot with con
 
   
  
- ## Analyses de différencation entre population
+ ## Analyses de différenciation entre population
  
- On compare maintenant les patrons de diversité génétiques entre les populations par rapport à la diversité globales.
+ On compare maintenant les patrons de diversité génétiques entre les populations par rapport à la diversité globale.
  
 Matrice de Fst par paire de population (estimateur du Fst de Weir de Cockerham(1984)
 ```r
@@ -223,7 +223,7 @@ ggheatmap <- ggplot2::ggplot(melted_matobs, aes(pop1, pop2, fill = value)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, 
                                    size = 12, hjust = 1))
 ggheatmap
-
+```
 
 ![image](https://user-images.githubusercontent.com/20643860/215585630-23152f8e-0602-4bd4-af86-d89fc9752bf1.png)
 
@@ -250,7 +250,7 @@ Comment choisir le modèle avec la meilleur probabilité postérieur?
 "We use SNMF’s cross-entropy criterion to infer the best estimate of K. The lower the cross-entropy, the better our model accounts for population structure. Sometimes cross-entropy continues to decline, so we might choose K where cross entropy first decreases the most."
 
 Souvent la solution n'est pas de choisir une K mais bien comparer les informations amenées par plusierus K
-Ici la première diminution de K a lieu à K=3 mais ça diminue également à K= 5
+Ici la première diminution de K a lieu à K=4 mais ça diminue également à K=6
 Comparons les 2.
 
 Comment représenter les données?
