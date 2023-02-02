@@ -25,6 +25,9 @@ En absence de référence :
 BOLD est une base de données mais qui est *incomplète* et il se peut que la référence n’existe pas. Dans ce cas, un message *no hit match* va s’afficher.
 BOLD vous suggère d’aller chercher dans une autre base de données BLAST.
 
+<img width="1189" alt="image" src="https://user-images.githubusercontent.com/20643860/216441493-58834143-55c1-4e59-9e8f-822a4d7e4307.png">
+
+
   - Cliquez sur **Blast Sequence On Genbank**. Votre séquence sera automatiquement rentrée sur le site de BLAST
   - Laissez les paramètres par défaut. Ici la recherche va s’effectuer dans la base de données nucléotidique. 
   - Cliquez sur **Highly similar sequences (megablast)**. Cette option va vous permettre de rechercher les séquences les plus similaires.
