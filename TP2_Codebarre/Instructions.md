@@ -69,8 +69,8 @@ Sur le site de BOLD SYSTEMS (https://www.boldsystems.org),
   - copier les **process id** dans la 1ère colonne
   
   - retourner sur Bold, cliquez sur **workbench** (username: biodivcons, password:FAU72816-05)
-  - puis **record search** (cochez *include public records*)
-  - coller les données **process id** et search
+  - puis **record search** 
+  - coller les données **process id** (cochez *include public records*) et **search**
   - cochez **public record**
   - déroulez la page et cocher **all data**
   - allez dans **taxon ID tree**, puis cochez **Muscle** dans alignement et dans **Colorize tree based on Barcode** : Bin 
