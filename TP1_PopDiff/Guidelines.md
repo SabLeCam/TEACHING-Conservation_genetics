@@ -192,7 +192,8 @@ explorez les valeurs de cette fonction pour obtenir les données de diversité p
 
 Estime et test le coefficient de consanguinité Fis
 
-```populations<-seppop(dataset)
+```
+populations<-seppop(dataset)
 inbred_coef <- sapply (populations, inbreeding, res.type = "estimate") 
 Fis_Bar <- sapply (inbred_coef, mean)
 Fis<-as.data.frame(Fis_Bar)
