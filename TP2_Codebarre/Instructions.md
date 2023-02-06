@@ -69,7 +69,7 @@ Sur le site de BOLD SYSTEMS (https://www.boldsystems.org),
   - copier les **process id** dans la 1ère colonne
   
   - retourner sur Bold, cliquez sur **workbench** (username: biodivcons, password:FAU72816-05)
-  - puis **record search**
+  - puis **record search** (cochez *include public records*)
   - coller les données **process id** et search
   - cochez **public record**
   - déroulez la page et cocher **all data**
