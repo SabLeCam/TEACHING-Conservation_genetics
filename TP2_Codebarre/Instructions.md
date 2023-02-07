@@ -71,12 +71,16 @@ Sur le site de BOLD SYSTEMS (https://www.boldsystems.org),
   - retourner sur Bold, cliquez sur **workbench** (username: biodivcons, password:FAU72816-05)
   - puis **record search** 
   - coller les données **process id** (cochez *include public records*) et **search**
-  - cochez **public record**
-  - déroulez la page et cocher **all data**
-  - allez dans **taxon ID tree**, puis cochez **Muscle** dans alignement et dans **Colorize tree based on Barcode** : Bin 
+
+<img width="1080" alt="image" src="https://user-images.githubusercontent.com/20643860/217006962-b457f55a-3d96-4fb9-8e74-9ae3e0305363.png">
+
+
+  - selectionnez **all data**
+  - allez dans l'onglet **_Sequence analyses_** et **taxon ID tree**
+  - puis cochez **Muscle** dans alignement et dans **Colorize tree based on Barcode** : Bin 
   (Pour Zostera, faite un arbre avec rbcl et ensuite avec matk)
   - puis cliquez sur ‘Build tree’ et visualiser le ficher pdf
-  - inspectez l’arbre coloré selon les Bin (individus regroupés par cluster de 2.2 %
+  - inspectez l’arbre coloré selon les Bin (individus regroupés par cluster de 2.2 %)
 ```
 2)	Est-ce-que l’arbre parvient à résoudre les différentes espèces ?
   - Puis cliquez sur ‘Build tree’ et visualiser le ficher pdf
