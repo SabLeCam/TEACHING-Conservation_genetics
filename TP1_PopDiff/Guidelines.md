@@ -269,6 +269,11 @@ Comparons les 2.
 Comment représenter les données?
 
 ```r
+qmatrix = Q(obj.snmf, K = 4, run=27)
+
+barplot(t(qmatrix), col = c("orange","violet","lightgreen","gray","red","darkblue"), border = NA, space = 0,
+        xlab = "Individuals", ylab = "Admixture coefficients")
+
 par(mar=c(4,4,0.5,0.5))
 pops<-levels(dataset@pop)
 barplot(t(qmatrix), col=RColorBrewer::brewer.pal(9,"Paired"), 
