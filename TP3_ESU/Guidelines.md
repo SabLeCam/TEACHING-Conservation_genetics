@@ -44,21 +44,21 @@ Installation
 
 Création du fichier (cytb)
   - Ouvrir **DNAsp**
-  - Ouvrir le fichier leaf_frog_cytb.fas 
+  - Ouvrir le fichier cytb_renamed.fasta 
   - Pour le gène cytb, aller dans Data et changer les paramètres pour haploid et mitochondrial 
   - Aller dans Generate puis dans Haplotype data file. Une fenêtre va apparaitre concernant les paramètres pour générer un fichier d’haplotype. Vérifier que l’option de sortie cochée soit Nexus Haplotype data file.  
   - Cliquer sur ok.
   - Enregistrer (Ex : haplotype_cyb)
   <img width="378" alt="image" src="https://user-images.githubusercontent.com/20643860/220004835-13c1ffa2-c3bb-401e-8365-5fa84a1a5ed4.png">
 
-  - Enregistrer (Ex : haplotype_cyb)
+
   - Les résultats apparaissent dans une fenêtre bleue. Une première partie résume votre analyse (nombre de séquences, nombre de site variables, les gaps sont-ils inclus ou non...). La partie haplotype distribution vous montre combien d’haplotypes vous avez dans vos données ainsi que leur fréquence. La diversité haplotypique est aussi donnée. Ensuite vous avez le nom des séquences qui composent chaque haplotype. 
   - Allez dans File puis Save/export data as. Choisissez le format nexus. Rentrer le nom de votre fichier avec un 2 à la fin (Ex : haplotype_cyb2).
   Vous venez de créer votre fichier d’haplotypes.
 
 Création du fichier (POMC)
   - Ouvrir DNAsp
-  - Pour ouvrir le fichier leaf_frog_pomc.fas, aller dans File>Open Unphase/genotype data file
+  - Pour ouvrir le fichier pomc_renamed.fasta, aller dans File>Open Unphase/genotype data file
   - Faire Run pour reconstruire les haplotypes diploïdes.
   - Aller dans Generate puis dans Haplotype data file et faire comme pour gène cytb.
 
