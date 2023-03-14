@@ -77,7 +77,7 @@ Une base de donnée avec les # de voucher, le site associé et les haplotypes as
 
 ## Partie II : Réseaux.
   
-  - Aller à : http://www.popart.otago.ac.nz/index.shtml puis Download
+  - Aller à : https://popart.maths.otago.ac.nz puis Download
   - Choisir votre système d’exploitation puis télécharger le fichier.
   - Installer le fichier dans votre répertoire. Cliquer sur popart.exe pour lancer l’installation (sous windows).
   - Ouvrir Popart.
