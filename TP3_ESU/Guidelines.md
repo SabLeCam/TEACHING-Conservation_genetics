@@ -31,7 +31,7 @@ Nous allons explorer comment la diversité génétique se répartie pour deux lo
 
 ## Part I: faire les fichiers d’haplotypes pour PopArt
   
-  *_Le fichier FAS avec les séquences des haplotypes a été créé de la façon suivante :
+  *_Le fichier FASTA avec les séquences des haplotypes a été créé de la façon suivante :
 Un fichier txt a été créé avec la liste des # d’accession Genbank des séquences (1 numéro par ligne). Les numéros étaient disponibles à la fin de l’article.
 Dans l’outil Batch Entrez de NCBI Genbank, télécharger le fichier txt des numéros d’accession. Récupérer la liste d’accessions et l’exporter en fichier sous format FASTA.
 Le fichier FASTA a été modifié au besoin pour être reconnu par le logiciel DNAsp (ex : Enlever, et ; / Y, R, W remplacés par -). Le logiciel MEGA peut être utilisé pour resauver le fichier en FASTA pour faciliter sa lecture._*
