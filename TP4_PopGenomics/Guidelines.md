@@ -23,3 +23,19 @@ Voici les étapes que j'ai réalisé en amont:
 - importer un fichier vcf
 - le transformer en objet genlight (similaire à genind mais adapté au gros volume de données)
 - vérifier que la conversion des genotypes est correcte.
+
+<img width="1236" alt="image" src="https://user-images.githubusercontent.com/20643860/232494654-d4ff7b42-b333-4da8-83b6-ac9c19ac0698.png">
+
+
+```r
+#chargé l'objet snp
+load(snp)
+snp
+```
+<img width="476" alt="image" src="https://user-images.githubusercontent.com/20643860/232495027-76e20e44-3851-4ec2-9d3b-5b9bb4f6d209.png">
+
+Explorez l'objet
+```r
+indNames(snp)
+levels(pop(snp))
+
