@@ -45,8 +45,8 @@ gl.report.callrate(snp)
 <img width="635" alt="image" src="https://user-images.githubusercontent.com/20643860/232498992-e3b76569-01a0-40d1-bfa1-4f8043520900.png">
 
 ## Filtrage des données
-Ici on commence l'étape primordial de filtrage des données.
-On commence par filtrer les SNPs avec que des données manquantes ou ceux qui sont monomorphes.
+Ici on commence l'étape primordiale de filtrage des données.
+On commence par filtrer les SNPs qui n'ont que des données manquantes ou ceux qui sont monomorphes.
 ```r
 ###SNP filtering####
 snp <- gl.filter.allna(snp)
@@ -63,7 +63,7 @@ hwe<-gl.filter.hwe(filtered_maf, subset="each")
 gl.report.heterozygosity(filtered_maf)
 ```
 A chaque étape, on voit le nombre de marqueurs qui sont éliminés car ils ne remplissent pas les critères.
-Une fois fini l'étape de filtre sur la "qualité" des SNPs , filtrer les données pour réduire le nombre de données manquantes. Essayer de jouer sur les valeur seuil pour trouver le meilleur compromis entre le nombre de marqueurs et le % de données manquantes.
+Une fois l'étape de filtre sur la "qualité" des SNPs finie , on filtre les données pour réduire le nombre de données manquantes. Essayer de jouer sur les valeurs seuil pour trouver le meilleur compromis entre le nombre de marqueurs et le % de données manquantes.
 ```r
 result <- gl.filter.callrate(hwe, method='loc', threshold=0.8,
                              verbose=3)
@@ -132,9 +132,9 @@ gpca
 
 <img width="645" alt="image" src="https://user-images.githubusercontent.com/20643860/232504704-95ad74b0-1db3-46b9-a9ba-9bb7eeecd6a8.png">
 
-Quels pourcentage de la variance génétique dans notre jeu de données est expliqué par l'axe 1 et 2 (composantes principales 1 et 2)?       
+Quels pourcentages de la variance génétique dans notre jeu de données est expliqué par l'axe 1 et 2 (composantes principales 1 et 2)?       
 
-Pour interpréter ces resultats, il est necessaire de visualiser la localisation des sites echantillonnés
+Pour interpréter ces resultats d'ACP, il est nécessaire de visualiser la localisation des sites echantillonnés
 
 ```r
 length(Ech_tot$ID)
