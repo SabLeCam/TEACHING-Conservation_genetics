@@ -29,7 +29,7 @@ Voici les étapes que j'ai réalisé en amont:
 
 ```r
 #chargé l'objet snp
-load(snp)
+load(file='snp')
 snp
 ```
 <img width="476" alt="image" src="https://user-images.githubusercontent.com/20643860/232495027-76e20e44-3851-4ec2-9d3b-5b9bb4f6d209.png">
