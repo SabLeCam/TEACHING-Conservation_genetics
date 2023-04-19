@@ -58,22 +58,27 @@ snp3<-gl.filter.monomorphs(snp2)
 Filtrer les snps en fonction de la maf (minimum allele frequency) et verifier leur neutralité (écart à l'équilibre de Hardy Weinberg)
 ```r
 filtered_maf <- gl.filter.maf(snp3, threshold=0.05, verbose=3)
-
 ```
+
 <img width="603" alt="image" src="https://user-images.githubusercontent.com/20643860/232812599-dbef8ff5-9366-49dc-a0af-91105337ae2c.png">
+
 ```r
 gl.report.heterozygosity(filtered_maf)#get new estimation of the genetic diversity in your data
 ```
+
 <img width="601" alt="image" src="https://user-images.githubusercontent.com/20643860/232812882-74d151f6-4c02-4e5b-81eb-9addafeb710f.png">
+
 ```r
 <img width="601" alt="image" src="https://user-images.githubusercontent.com/20643860/232812882-74d151f6-4c02-4e5b-81eb-9addafeb710f.png">
 hwe<-gl.filter.hwe(filtered_maf, subset="each")
 gl.report.heterozygosity(hwe)
 ```
+
 <img width="603" alt="image" src="https://user-images.githubusercontent.com/20643860/232813037-79c6781f-5f6a-4891-9101-80eb5014e088.png">
 
 A chaque étape, on voit le nombre de marqueurs qui sont éliminés car ils ne remplissent pas les critères.
 Une fois l'étape de filtre sur la "qualité" des SNPs finie , on filtre les données pour réduire le nombre de données manquantes. Essayer de jouer sur les valeurs seuil pour trouver le meilleur compromis entre le nombre de marqueurs et le % de données manquantes.
+
 ```r
 result <- gl.filter.callrate(hwe, method='loc', threshold=0.8,
                              verbose=3)
