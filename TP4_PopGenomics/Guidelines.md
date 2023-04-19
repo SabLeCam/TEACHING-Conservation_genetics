@@ -69,7 +69,6 @@ gl.report.heterozygosity(filtered_maf)#get new estimation of the genetic diversi
 <img width="601" alt="image" src="https://user-images.githubusercontent.com/20643860/232812882-74d151f6-4c02-4e5b-81eb-9addafeb710f.png">
 
 ```r
-<img width="601" alt="image" src="https://user-images.githubusercontent.com/20643860/232812882-74d151f6-4c02-4e5b-81eb-9addafeb710f.png">
 hwe<-gl.filter.hwe(filtered_maf, subset="each")
 gl.report.heterozygosity(hwe)
 ```
