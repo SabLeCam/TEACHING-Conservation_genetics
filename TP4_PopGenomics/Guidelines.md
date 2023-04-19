@@ -151,8 +151,14 @@ Quels pourcentages de la variance génétique dans notre jeu de données est exp
 Pour interpréter ces resultats d'ACP, il est nécessaire de visualiser la localisation des sites echantillonnés
 
 ```r
-length(Ech_tot$ID)
-i<-seq(1,913,by=1)
+
+Ech_tot <- read.delim("Ech_tot.txt",  header=T,sep="\t")
+
+g<-match(indNames(result2),Ech_tot$ID)
+g
+
+l<-length(Ech_tot$ID)
+i<-seq(1,l,by=1)
 ind_lib<-subset(i, (i %in% g))
 
 geoDf<-Ech_tot[ind_lib,]
