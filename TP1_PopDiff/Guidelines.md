@@ -31,8 +31,8 @@ Installez les packages suivants:
 ```r
 install.packages("adegenet","hierfstat","pegas")
 install.packages("ggplot2","magrittr","reshape2")
-
 install.packages(c("fields","RColorBrewer","mapplots"))
+
 source("http://bioconductor.org/biocLite.R")
 
 if (!require("BiocManager", quietly = TRUE))
@@ -222,7 +222,7 @@ Matrice de Fst par paire de population (estimateur du Fst de Weir de Cockerham(1
 ```r
 mat.obs <- pairwise.WCfst(dataset.hfstat)
 ```
-représenter cette matice avec une heatmap
+Représenter cette matice avec une heatmap
 
 ```r
 melted_matobs <- melt(mat.obs, na.rm = TRUE)
