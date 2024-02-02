@@ -132,11 +132,6 @@ pop8 Bandhavgarh
 pop<-c(rep("M",14),rep("S",11),rep("P",51),rep("KPC",5),rep("K",50),rep("A",5),rep("T",11),rep("B",22))
 pop(dataset)<-pop
 dataset@pop
-
-
-table(pop(dataset))
-barplot(table(pop(dataset)), col=funky(17), las=3,
-        xlab="Population", ylab="Sample size")
 ```
 
 <img width="1068" alt="image" src="https://user-images.githubusercontent.com/20643860/215523567-f74f398f-d809-4174-a7ac-667260d69025.png">
@@ -159,10 +154,10 @@ div<-summary(dataset)
 // Expected heterozygosity: 0.79 0.71 0.71 0.7 0.79 0.78 0.79 0.74 0.79 0.73 0.77
 
 ```
+On peut récupérer plusieurs informations de ce résumé comme par exemple le nombre d'individus par pop
 
 ```r
-table(pop(dataset))
-barplot(table(pop(dataset)), col=funky(17), las=3,
+barplot(div$n.by.pop, col=funky(17), las=3,
         xlab="Population", ylab="Sample size")
 ```
  Avec le même principe essaye d'obtenir i) le nb d'allèles par locus, ii) le nb d'allèle par pop
