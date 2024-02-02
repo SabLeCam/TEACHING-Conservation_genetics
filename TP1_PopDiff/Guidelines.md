@@ -78,7 +78,7 @@ D1622	1	209	123	129	157	146	164	180	266	214	-9	225
 ```
 
 ```r
-inputfile="PATH_TO_YOUR FILE"
+inputfile="PATH_TO_YOUR FILE" #169_tigers_structure.stru
 
 dataset<-read.structure(inputfile)
 
@@ -241,15 +241,15 @@ ggheatmap
 ```r
 #input les données, fichier avec hearder différent
 
-input.file2 = "/Users/slecam/Desktop/COURS/BIODIV&CONS/4-TP structure tigres/169_tigers_structure.stru.txt"
+input.file2 = "PATH_TO_YOUR FILE" #169_tigers_structure.stru.txt"
 
-struct2geno(file = input.file2, TESS = FALSE, diploid = TRUE, FORMAT = 2,
-            extra.row = 1, extra.col = 2, output = "tiger.geno")
+tiger.geno<-struct2geno(input.file=input.file2, 2, FORMAT = 2,
+            extra.row = 1, extra.col = 2)
 ```
             
 On choisit le nombre de K à tester (nb de populations à inférer) et le nombre de répetition
 ```r
-obj.snmf = snmf("tiger.geno", K=1:8, ploidy=2, entropy=T, repetition=10, alpha=100, project="new")
+obj.snmf = snmf("tiger.geno", K=1:8, ploidy=2, entropy=T, repetition=30, alpha=100, project="new")
 plot(obj.snmf, cex = 1.2, col = "lightblue", pch = 19)
 ```
 
@@ -257,23 +257,33 @@ Comment choisir le modèle avec la meilleur probabilité postérieur?
 
 "We use SNMF’s cross-entropy criterion to infer the best estimate of K. The lower the cross-entropy, the better our model accounts for population structure. Sometimes cross-entropy continues to decline, so we might choose K where cross entropy first decreases the most."
 
-Souvent la solution n'est pas de choisir une K mais bien comparer les informations amenées par plusierus K
-Ici la première diminution de K a lieu à K=4 mais ça diminue également à K=6
-Comparons les 2.
+
+On choisit le meilleur run pour le K considéré
+
+```r
+ce <-  cross.entropy(obj.snmf, K = 5)
+ce
+best_run <- which.min(ce)
+best_run
+```
 
 Comment représenter les données?
 
 ```r
-qmatrix = Q(obj.snmf, K = 4, run=27)
-
-barplot(t(qmatrix), col = c("orange","violet","lightgreen","gray","red","darkblue"), border = NA, space = 0,
-        xlab = "Individuals", ylab = "Admixture coefficients")
+qmatrix = Q(obj.snmf, K = 5, run=best_run)
 
 par(mar=c(4,4,0.5,0.5))
 pops<-levels(dataset@pop)
 barplot(t(qmatrix), col=RColorBrewer::brewer.pal(9,"Paired"), 
         border=NA, space=0, xlab="Individuals", 
         ylab="Admixture coefficients")
+segments(x0 =14, y0 = 0, x1 = 14, y1 = 1, col = "black", lwd=3)
+segments(x0 =25, y0 = 0, x1 = 25, y1 = 1, col = "black", lwd=3)
+segments(x0 =76, y0 = 0, x1 = 76, y1 = 1, col = "black", lwd=3)
+segments(x0 =81, y0 = 0, x1 = 81, y1 = 1, col = "black", lwd=3)
+segments(x0 =131, y0 = 0, x1 = 131, y1 = 1, col = "black", lwd=3)
+segments(x0 =136, y0 = 0, x1 = 136, y1 = 1, col = "black", lwd=3)
+segments(x0 =147, y0 = 0, x1 = 147, y1 = 1, col = "black", lwd=3)
 #Add population labels to the axis:
 for (i in 1:length(pops)){
   axis(1, at=median(which(dataset@pop==pops[i])), labels=pops[i])}
