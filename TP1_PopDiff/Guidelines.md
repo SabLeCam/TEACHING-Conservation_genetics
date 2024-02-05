@@ -57,7 +57,7 @@ library("hierfstat")
 library("ggplot2")
 library("dplyr")
 library("LEA")
-library(reshape2)
+library("reshape2")
 ```
 
 ## Données
