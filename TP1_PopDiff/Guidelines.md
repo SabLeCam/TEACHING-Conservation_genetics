@@ -243,7 +243,7 @@ ggheatmap
 
 input.file2 = "PATH_TO_YOUR FILE" #169_tigers_structure.stru.txt"
 
-tiger.geno<-struct2geno(input.file=input.file2, 2, FORMAT = 2,
+tiger.geno<-struct2geno(input.file2, 2, FORMAT = 2,
             extra.row = 1, extra.col = 2)
 ```
             
