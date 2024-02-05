@@ -292,6 +292,18 @@ for (i in 1:length(pops)){
   
   ![image](https://user-images.githubusercontent.com/20643860/215650112-ae3fb189-1511-4196-bd7e-2a6eda3db8ee.png)
 
+  ## Compte rendu de TP:
+  
+
+1.	Une brève introduction (environ une page à 1.5 interligne ) sur le contexte problématique des petites populations isolées de tigres (dérive génétique, consanguinité) et l’importance de maintenir des corridors pour permettre l’échange d’individus.
+2.	L’objectif du TP
+3.	Indiquez si les populations sont en HW ou si elles ont un déficit en hétérozygotes
+4.	Indiquez les Fst entre les différentes populations
+5.	Quelles populations sont les plus distantes (en Fst) ?
+6.	Est-ce que les populations ont de bons niveaux de  diversité génétique? 
+7.	Indiquez le nombre de populations le plus vraisemblables (à l’aide de structure).
+8.	Commentez brièvement ces résultats
+
   
 
 
