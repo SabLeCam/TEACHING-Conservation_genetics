@@ -113,7 +113,10 @@ Votre rapport de TP devra répondre aux questions suivantes :
 5)	Discutez des avantages/désavantages de l’ADN mitochondrial et de marqueurs nucléaires adaptatifs pour la caractérisation des unités évolutive significatives. Discutez de manière générale et faire des liens avec l’exemple du TP.
  ```
 
-  *_Pour la question 4, on considère les informations suivantes (simplification des informations tirées de l’article) : -1 Le regroupement géographique de Poços n’est pas inclus dans une aire protégée. -2 Les populations regroupées dans les unités Canastra et Quadrilatero se retrouvent en partie dans une aire protégée. -3 Vous pouvez fouiller davantage ou vous en tenir à cette simplification._*
+  *_Pour la question 4, on considère les informations suivantes (simplification des informations tirées de l’article) :
+  - 1 Le regroupement géographique de Poços n’est pas inclus dans une aire protégée.
+  - 2 Les populations regroupées dans les unités Canastra et Quadrilatero se retrouvent en partie dans une aire protégée.
+  - 3 Vous pouvez fouiller davantage ou vous en tenir à cette simplification._*
 
 Les ESU définies par les auteurs sont les suivantes :
 
