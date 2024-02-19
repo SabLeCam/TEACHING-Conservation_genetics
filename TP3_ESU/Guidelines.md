@@ -36,13 +36,13 @@ Un fichier txt a été créé avec la liste des # d’accession Genbank des séq
 Dans l’outil Batch Entrez de NCBI Genbank, télécharger le fichier txt des numéros d’accession. Récupérer la liste d’accessions et l’exporter en fichier sous format FASTA.
 Le fichier FASTA a été modifié au besoin pour être reconnu par le logiciel DNAsp (ex : Enlever, et ; / Y, R, W remplacés par -). Le logiciel MEGA peut être utilisé pour resauver le fichier en FASTA pour faciliter sa lecture._*
   
-Installation
+**Installation**
   - allez à http://www.ub.edu/dnasp/
   - cliquez sur Download DNAsp
   - installer le fichier dnasp51001.msi dans votre répertoire.
   - une fois l’installation completée, lancez le logiciel.
 
-Création du fichier (cytb)
+**Création du fichier pour le gène mitochondrial cytb**
   - Ouvrir **DNAsp**
   - Ouvrir le fichier cytb_renamed.fasta 
   - Pour le gène cytb, aller dans Data et changer les paramètres pour haploid et mitochondrial 
@@ -52,28 +52,24 @@ Création du fichier (cytb)
   <img width="378" alt="image" src="https://user-images.githubusercontent.com/20643860/220004835-13c1ffa2-c3bb-401e-8365-5fa84a1a5ed4.png">
 
 
-  - Les résultats apparaissent dans une fenêtre bleue. Une première partie résume votre analyse (nombre de séquences, nombre de site variables, les gaps sont-ils inclus ou non...). La partie haplotype distribution vous montre combien d’haplotypes vous avez dans vos données ainsi que leur fréquence. La diversité haplotypique est aussi donnée. Ensuite vous avez le nom des séquences qui composent chaque haplotype. 
+  - Les résultats apparaissent dans une fenêtre . Une première partie résume votre analyse (nombre de séquences, nombre de site variables, les gaps sont-ils inclus ou non...). La partie haplotype distribution vous montre combien d’haplotypes vous avez dans vos données ainsi que leur fréquence. La diversité haplotypique est aussi donnée. Ensuite vous avez le nom des séquences qui composent chaque haplotype. 
   - Allez dans File puis Save/export data as. Choisissez le format nexus. Rentrer le nom de votre fichier avec un 2 à la fin (Ex : haplotype_cyb2).
   Vous venez de créer votre fichier d’haplotypes.
 
-Création du fichier (POMC)
-  - Ouvrir DNAsp
-  - Pour ouvrir le fichier pomc_renamed.fasta, aller dans File>Open Unphase/genotype data file
-  - Faire Run pour reconstruire les haplotypes diploïdes.
-  - Aller dans Generate puis dans Haplotype data file et faire comme pour gène cytb.
+**Création du fichier pour le gène nucléaire POMC**
+- Ouvrir DNAsp
+- Pour ouvrir le fichier pomc_renamed.fasta, aller dans File>Open Unphase/genotype data file
+- Faire Run pour reconstruire les haplotypes diploïdes.
+- Aller dans Generate puis dans Haplotype data file et faire comme pour gène cytb.
 
+**Ajout des localisations dans le fichier d’haplotypes**
+- Ouvrir fichier d’haplotype (sans le 2) dans bloc note (ou autre logiciel pour lire les .txt)
+- Ouvrir le fichier texte matrice_location_cytb (ou matrice_location_pomc).
+- Copier le code et le coller juste avant le dernier bloc de code dans votre fichier d’haplotype (celui sans le 2).
+- Enregistrer.
 
-
-
-Ajout des locations dans le fichier d’haplotypes
-
--Ouvrir fichier d’haplotype (sans le 2) dans bloc note (ou autre logiciel pour lire les .txt)
--Ouvrir le fichier texte matrice_location_cytb (ou matrice_location_pomc).
--Copier le code et le coller juste avant le dernier bloc de code dans votre fichier d’haplotype (celui sans le 2).
--Enregistrer.
-
-*_Le fichier d’haplotypes ne contient pas les données de géolocalisation. Mais les points GPS des locations sont fournies dans les suppléments de l’article et les locations de chacun des séquence est fournie dans les suppléments (ou dans les informations de chaque séquence sur Genbank).
-Une base de donnée avec les # de voucher, le site associé et les haplotypes associés pour chaque loci a été réalisé. Les informations ainsi compilées et les points GPS ont été utilisés pour ajouter une section au fichier d’haplotype qui permet d’associer à chaque location une fréquence de chaque haplotype à l’aide d’une matrice et d’associer chaque location à ses coordonnées. C’est cette partie de code que vous ajoutez au fichier._*
+*_Le fichier d’haplotypes ne contient pas les données de géolocalisation. Mais les points GPS des locations sont fournies dans les suppléments de l’article et les localisations de chacun des séquences est fournie dans les suppléments (ou dans les informations de chaque séquence sur Genbank).
+Une base de donnée avec les # de voucher, le site associé et les haplotypes associés pour chaque loci a été réalisé. Les informations ainsi compilées et les points GPS ont été utilisés pour ajouter une section au fichier d’haplotype qui permet d’associer à chaque localisation une fréquence de chaque haplotype à l’aide d’une matrice et d’associer chaque localisation à ses coordonnées. C’est cette partie de code que vous ajoutez au fichier._*
 
 ## Partie II : Réseaux.
   
