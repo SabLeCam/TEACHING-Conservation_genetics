@@ -19,7 +19,7 @@ Pour ce TP, nous nous inspirons de l’article de de Malgalhaes et al. 2017.
 
 
 La diversité intraspécifique est corrélée au potentiel évolutif des espèces. Pourtant la diversité intraspécifique (génétique, phénotypique, etc) est souvent négligée dans les stratégies de conservation et dans la détermination des aires protégées.
-Plusieurs espèces peuvent se subdiviser en ESU ou MU. La prise en compte de subdivisions intraspécifiques (ex : ESU, MU) dans les stratégies de conservation pourrait faciliter la protection de la diversité génétique et du potentiel adaptatif des espèces.
+Plusieurs espèces peuvent se subdiviser en ESU (Evolutionary Significant Unit) ou MU (Management. Units). La prise en compte de subdivisions intraspécifiques dans les stratégies de conservation pourrait faciliter la protection de la diversité génétique et du potentiel adaptatif des espèces.
 
 Dans cet article, les auteurs s’intéressent à la grenouille leaf frog (*_Pithecopus ayeaye_*). Cette espèce endémique de l’écosystème *_campos rupestre_* du Brésil avait auparavant un statut d’espèce en danger critique d’extinction parce qu’elle ne se trouvait que dans deux localisations séparées et menacées par des pertes d’habitat. Toutefois la découverte de l’espèce dans de nouveaux sites fait en sorte qu’elle a perdu son statut d’espèce menacée et les efforts de conservation qui y sont associées. Les auteurs se demandent si cette décision est vraiment adaptée à la réalité de la population de Leaf frog ou si la considération de la diversité génétique, du potentiel évolutif et de la structure de population ne justifieraient pas qu’on maintienne un effort supplémentaire de conservation.
 
