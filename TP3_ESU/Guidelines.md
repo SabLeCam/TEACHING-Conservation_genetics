@@ -6,7 +6,7 @@
 
 Il existe différentes méthodes de construction des réseaux, nous allons explorer les réseaux d’haplotypes avec le logiciel *_PopArt_*.
 
-Pour ce TP, nous nous inspirons de l’article de de Malgalhaes et al. 2017. 
+
 
 ## Contexte : 
 Pour ce TP, nous nous inspirons de l’article de de Malgalhaes et al. 2017. 
