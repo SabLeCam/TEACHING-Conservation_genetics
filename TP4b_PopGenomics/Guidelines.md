@@ -137,13 +137,20 @@ gl.smearplot(gl7)
 L’Analyse en Composantes Principales (PCA) est une analyse de type multivariée, ça signifie qu’elle intègre une variable dépendante (VD) et plus d’une variable indépendante (VI) et permet de simplifier des données complexes. L’objectif de cette analyse est de réaliser un graphique qui nous permettra d’interpréter les différences génétiques entre des groupes et des individus. La PCA va créer autant de nouvelles variables (PC) qu’il y a de variables indépendantes initiales (individus) et les deux plus informatives seront projetées. Chaque nouvelle variable contiendra de l’information sur l’ensemble des variables indépendantes initiales (individus).
 
 ```r
-pc7 <- gl.pcoa(gl7, nfactors=5)
-names(pc7)
-barplot(pc7$eig/sum(pc7$eig)*100, )#graphique de pourcentage de distribution des axes
-gl.pcoa.plot(pc7, gl7, label = "ind", xaxis=1, yaxis=2)
+#renommer les pop
+levels(pop(gl7))<-c("CAJ","Gaspésie",  "Ile verte" ,"PLT"   ,    "Rimouski" , "Sept iles" ,"SS")
+
+#faire la PCA
+pca1 <- glPca(gl7, nf=5)
+names(pca1)
+## plot eigenvalues
+barplot(pca1$eig, main="eigenvalues", col=heat.colors(length(pca1$eig)))
+## plot showing groups
+s.class(pca1$scores, pop(gl), col=rainbow(7))
+add.scatter.eig(pca1$eig,2,1,2,posi = "bottomright")
 ```
-<p align="center">
-<img width="702" alt="image" src="https://github.com/SabLeCam/OUTILS_MOL/assets/20643860/a6abf8d9-9b5a-40a9-844e-f655808381ec">
+<p align="center"> 
+<img width="702" alt="image" src="https://github.com/SabLeCam/TEACHING-Conservation_genetics/assets/20643860/2209c2d3-8bde-4d34-9ffb-83ce8625f8ca")
 </p>
 
 >Comment interprétez-vous le graphique obtenu ?
@@ -155,6 +162,7 @@ On importe les données microsat
 setwd("PATH_TO_TOUR_FILE")
 microsat<-read.genepop("zost24_genepop_gulf.gen")
 microsat
+levels(pop(microsat))<-c("Ile verte","Rimouski","LUD", "PLT", "Sept île" ,"BG", "CAJ", "SH")
 ```
 ```r
 tab_microsat<-tab(microsat, freq=TRUE, NA.method="mean")
