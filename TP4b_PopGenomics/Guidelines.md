@@ -162,7 +162,7 @@ On importe les données microsat
 setwd("PATH_TO_TOUR_FILE")
 microsat<-read.genepop("zost24_genepop_gulf.gen")
 microsat
-levels(pop(microsat))<-c("Ile verte","Rimouski","LUD", "PLT", "Sept île" ,"BG", "CAJ", "SH")
+levels(pop(microsat))<-c("Ile verte","Rimouski","LUD", "PLT", "Sept île" ,"BG", "SS", "CAJ", "SH")
 ```
 ```r
 tab_microsat<-tab(microsat, freq=TRUE, NA.method="mean")
@@ -173,6 +173,11 @@ pca<-dudi.pca(tab_microsat, center=TRUE, scale=FALSE)
 s.class(pca$li, pop(microsat), col=rainbow(7))
 add.scatter.eig(pca1$eig,2,1,2,posi = "bottomright")
 ```
+
+<p align="center"> 
+<img width="702" alt="image" src="https://github.com/SabLeCam/TEACHING-Conservation_genetics/assets/20643860/9cab7715-6b41-4ba6-b29d-0ca38dcef71e")
+</p>
+
 >Comparez les informations obtenues à partir des microsatellites et des SNPs
 >Reprenez les mêmes commandes pour les laminaires (filename= Report_DSacc21-6007_3_moreOrders_SNP_2. Indmetafile= laminaria2.csv)
 >Pour ces fichiers, il y a des populations qui proviennent des USA et d'autres régions du monde et que nous n'utiliserons pas dans l'analyse. Il
