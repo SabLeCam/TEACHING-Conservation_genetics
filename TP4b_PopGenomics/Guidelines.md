@@ -132,9 +132,9 @@ gl.smearplot(gl7)
 <img width="702" alt="image" src="https://github.com/SabLeCam/OUTILS_MOL/assets/20643860/707316cb-457d-4fbe-9a70-b493c56f71d8">
 
 
-## Analyse de la structure de la diversité génétique avec une PCOA
-### Qu’est-ce qu’une PCOA ?
-L’Analyse des Coordonnées Principales (PCoA) est une analyse de type multivariée, ça signifie qu’elle intègre une variable dépendante (VD) et plus d’une variable indépendante (VI). Une PCoA est une analyse semblable à une PCA et permet de simplifier des données complexes. L’objectif de cette analyse est de réaliser un graphique qui nous permettra d’interpréter les différences génétiques entre des groupes et des individus. La PCoA va créer autant de nouvelles variables (PC) qu’il y a de variables indépendantes initiales (individus) et les deux plus informatives seront projetées. Chaque nouvelle variable contiendra de l’information sur l’ensemble des variables indépendantes initiales (individus).
+## Analyse de la structure de la diversité génétique avec une PCA
+### Qu’est-ce qu’une PCA ?
+L’Analyse en Composantes Principales (PCA) est une analyse de type multivariée, ça signifie qu’elle intègre une variable dépendante (VD) et plus d’une variable indépendante (VI) et permet de simplifier des données complexes. L’objectif de cette analyse est de réaliser un graphique qui nous permettra d’interpréter les différences génétiques entre des groupes et des individus. La PCA va créer autant de nouvelles variables (PC) qu’il y a de variables indépendantes initiales (individus) et les deux plus informatives seront projetées. Chaque nouvelle variable contiendra de l’information sur l’ensemble des variables indépendantes initiales (individus).
 
 ```r
 pc7 <- gl.pcoa(gl7, nfactors=5)
@@ -148,10 +148,24 @@ gl.pcoa.plot(pc7, gl7, label = "ind", xaxis=1, yaxis=2)
 
 >Comment interprétez-vous le graphique obtenu ?
 
-## Analyse de la structure de la diversité génétique avec une PCOA utilisant LES MICROSATELLITES
+## Analyse de la structure de la diversité génétique avec une PCA utilisant LES MICROSATELLITES
 
+On importe les données microsat
+```r
+setwd("PATH_TO_TOUR_FILE")
+microsat<-read.genepop("zost24_genepop_gulf.gen")
+microsat
+```
+```r
+tab_microsat<-tab(microsat, freq=TRUE, NA.method="mean")
+pca<-dudi.pca(tab_microsat, center=TRUE, scale=FALSE)
+#dudi.pca(df = tab_microsat, center = TRUE, scale = FALSE, scannf = FALSE, nf = 7)
 
-
+## plot showing groups
+s.class(pca$li, pop(microsat), col=rainbow(7))
+add.scatter.eig(pca1$eig,2,1,2,posi = "bottomright")
+```
+>Comparez les informations obtenues à partir des microsatellites et des SNPs
 >Reprenez les mêmes commandes pour les laminaires (filename= Report_DSacc21-6007_3_moreOrders_SNP_2. Indmetafile= laminaria2.csv)
 >Pour ces fichiers, il y a des populations qui proviennent des USA et d'autres régions du monde et que nous n'utiliserons pas dans l'analyse. Il
 faut donc les enlever avec cette fonction
