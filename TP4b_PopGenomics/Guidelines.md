@@ -153,7 +153,7 @@ names(pca1)
 ## plot eigenvalues
 barplot(pca1$eig, main="eigenvalues", col=heat.colors(length(pca1$eig)))
 ## plot showing groups
-s.class(pca1$scores, pop(gl), col=rainbow(7))
+s.class(pca1$scores, pop(gl7), col=rainbow(7))
 add.scatter.eig(pca1$eig,2,1,2,posi = "bottomright")
 ```
 <p align="center"> 
