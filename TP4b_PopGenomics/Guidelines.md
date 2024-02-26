@@ -187,12 +187,19 @@ add.scatter.eig(pca1$eig,2,1,2,posi = "bottomright")
  
 ## JEU DE DONNEES SUR LES LAMINAIRES
 >Comparez les informations obtenues à partir des microsatellites et des SNPs
+>
 >Reprenez les mêmes commandes pour les laminaires (filename= Report_DSacc21-6007_3_moreOrders_SNP_2. Indmetafile= laminaria2.csv)
->Pour ces fichiers, il y a des populations qui proviennent des USA et d'autres régions du monde et que nous n'utiliserons pas dans l'analyse. Il
-faut donc les enlever avec cette fonction
+>
+>Pour ces fichiers, il y a des populations qui proviennent des USA et d'autres régions du monde et que nous n'utiliserons pas dans l'analyse. Il faut donc les enlever avec cette fonction
 
 ```r
 gl1<- gl.drop.pop(gl, pop.list=c("Denmark","Norway","russia","Iceland","Ireland","Korea","Alaska","Maine","Connecticut","Rhode_island","CapeCod","NewYork","NewHampshire","washington"))
+```
+
+>Pour le fichier microsat, il faut renommer les population une fois que vous avez importé les fichiers.
+
+```r
+levels(pop(microsat))<-c("TAD","IV","LUD", "SAM", "NOR" ,"PUR", "CAD", "GRA", "NEW", "COL", "PAS", "BONDC", "BON", "CASCA", "COR", "R")
 ```
 
 Voici la carte d'échantillonnage des laminaires.
