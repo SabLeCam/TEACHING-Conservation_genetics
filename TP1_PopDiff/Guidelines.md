@@ -249,7 +249,7 @@ tiger.geno<-struct2geno(input.file2, 2, FORMAT = 2,
             
 On choisit le nombre de K à tester (nb de populations à inférer) et le nombre de répetition
 ```r
-obj.snmf = snmf("tiger.geno", K=1:8, ploidy=2, entropy=T, repetition=30, alpha=100, project="new")
+obj.snmf = snmf("169_tigers_structure.stru.txt.geno", K=1:8, ploidy=2, entropy=T, repetition=30, alpha=100, project="new")
 plot(obj.snmf, cex = 1.2, col = "lightblue", pch = 19)
 ```
 
