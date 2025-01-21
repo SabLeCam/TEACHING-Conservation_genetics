@@ -241,8 +241,7 @@ ggheatmap <- ggplot2::ggplot(melted_matobs, aes(pop1, pop2, fill = value)) +
                                    size = 12, hjust = 1))
 ggheatmap
 ```
-
-![image](https://user-images.githubusercontent.com/20643860/215585630-23152f8e-0602-4bd4-af86-d89fc9752bf1.png)
+![image](https://github.com/user-attachments/assets/61e3bb5c-88f8-436c-bb54-e3cd0d428d32)
 
 
 ## Inférence de la structure de population
