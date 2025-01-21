@@ -220,14 +220,22 @@ mat.obs <- pairwise.WCfst(dataset.hfstat)
 Représenter cette matice avec une heatmap
 
 ```r
-melted_matobs <- melt(mat.obs, na.rm = TRUE)
+
+#garder que la partie supérieure de la matrice
+get_upper_tri <- function(cormat){
+  cormat[lower.tri(cormat)]<- NA
+  return(cormat)
+}
+mat.obs_upper <-get_upper_tri(mat.obs)
+
+melted_matobs <- melt(mat.obs_upper, na.rm = TRUE)
 colnames(melted_matobs)<-c("pop1","pop2","value")
 
 ggheatmap <- ggplot2::ggplot(melted_matobs, aes(pop1, pop2, fill = value)) +
   geom_tile(color = "white")+
-  geom_text(aes(label = value), color="black", size = 3)+
   scale_fill_gradient2(low = "blue", high = "red",  
-                       midpoint = 0.15, limit = c(0,0.3), space = "Lab" ) +
+                       midpoint = 0.075, limit = c(0,0.20), space = "Lab" ) +
+  geom_text(aes(label = round(value,digits = 3)), color="black", size = 3)+
   theme_minimal()+ # minimal theme
   theme(axis.text.x = element_text(angle = 45, vjust = 1, 
                                    size = 12, hjust = 1))
