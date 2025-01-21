@@ -225,6 +225,7 @@ colnames(melted_matobs)<-c("pop1","pop2","value")
 
 ggheatmap <- ggplot2::ggplot(melted_matobs, aes(pop1, pop2, fill = value)) +
   geom_tile(color = "white")+
+  geom_text(aes(label = value), color="black", size = 3)+
   scale_fill_gradient2(low = "blue", high = "red",  
                        midpoint = 0.15, limit = c(0,0.3), space = "Lab" ) +
   theme_minimal()+ # minimal theme
