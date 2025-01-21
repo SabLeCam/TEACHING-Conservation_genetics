@@ -236,7 +236,7 @@ ggheatmap
 ![image](https://user-images.githubusercontent.com/20643860/215585630-23152f8e-0602-4bd4-af86-d89fc9752bf1.png)
 
 
-## Inférence bayésienne de la structure de population
+## Inférence de la structure de population
 
 ```r
 #input les données, fichier avec hearder différent
